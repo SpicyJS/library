@@ -2,6 +2,7 @@ import { deepEqual } from "node:assert/strict";
 import test from "node:test";
 import request from "supertest";
 import { createApp } from "./app";
+import { createBookFeature } from "./features";
 
 test("Supertest works!", async () => {
   const app = createApp();
@@ -9,4 +10,6 @@ test("Supertest works!", async () => {
 
   deepEqual(result.status, 200);
   deepEqual(result.body, { status: "ready" });
+
+  
 });

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "tsx --test"
+    "test": "tsx --test",
+    "dev": "tsx --watch src/app/index.ts"
   },
   "keywords": [],
   "author": "",
