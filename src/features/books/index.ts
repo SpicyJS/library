@@ -1,8 +1,8 @@
 import { Router } from "express";
 
-type Pancake = unknown;
+type Book = unknown;
 type Db = {
-  getAll: () => Promise<Pancake[]>;
+  getAll: () => Promise<Book[]>;
 };
 
 export function createBookFeature(db: Db) {
@@ -11,6 +11,10 @@ export function createBookFeature(db: Db) {
       const router = Router();
       router.get("/", async (req, res) => {
         res.json(await db.getAll());
+      });
+
+      router.post("/", async (req, res) => {
+        res.json({ id: -1 });
       });
 
       return router;
