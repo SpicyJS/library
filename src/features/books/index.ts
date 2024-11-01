@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { v4 } from "uuid";
+import { Book } from "./types";
+import { bookSchema } from "./types";
 
 
 type Db = {
@@ -17,6 +19,7 @@ export function createBookFeature(db: Db) {
 
       router.post("/", async (req, res) => {
         const book = req.body;
+        bookSchema.parse(book)
         db.add(book);
         res.status(201).end();
       });
