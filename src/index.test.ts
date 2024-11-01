@@ -23,8 +23,19 @@ test("GET /api/books", async () => {
 });
 
 test("POST /api/books", async () => {
-  const result = await request(app).post("/api/books");
+  const book = {
+    author: "Достоевский",
+    title: "Преступления и наказание",
+    year: 1861,
+  };
+  const result = await request(app).post("/api/books").send(book);
 
-  deepEqual(result.status, 200);
-  deepEqual(result.body, { id: -1 });
+  console.log(result.body);
+
+  deepEqual(result.status, 201);
+  // const book = 
+  // deepEqual(result.body, { id: -1 });
+
+  const books = ((await request(app).get("/api/books")).body)
+  deepEqual(books, [])
 });

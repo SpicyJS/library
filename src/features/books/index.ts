@@ -1,8 +1,16 @@
 import { Router } from "express";
+import { v4 } from "uuid";
 
-type Book = unknown;
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  year: number;
+};
+
 type Db = {
   getAll: () => Promise<Book[]>;
+  add: (book: Book) => Promise<void>;
 };
 
 export function createBookFeature(db: Db) {
@@ -14,7 +22,11 @@ export function createBookFeature(db: Db) {
       });
 
       router.post("/", async (req, res) => {
-        res.json({ id: -1 });
+        const { title, author, year } = req.body;
+        const id = v4();
+        const book = { id, title, author, year };
+        db.add(book);
+        res.status(201);
       });
 
       return router;

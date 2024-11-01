@@ -6,8 +6,10 @@ function createDb() {
     getAll: async () => [],
   };
 }
+
 export function createApp() {
   const app = express();
+  app.use(express.json());
 
   app.get("/status", async (req, res) => {
     res.json({ status: "ready" });
