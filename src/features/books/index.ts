@@ -1,15 +1,6 @@
 import { Router } from "express";
 import { v4 } from "uuid";
 
-export type Book = {
-  title: string;
-  author: string;
-  genre: string;
-  publishedYear: number;
-  isbn: string;
-  availability: string;
-  rentalInfo: null;
-};
 
 type Db = {
   getAll: () => Promise<Book[]>;
