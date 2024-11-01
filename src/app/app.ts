@@ -8,7 +8,7 @@ export function createApp() {
     res.json({ status: "ready" });
   });
 
-  const bookFeature = createBookFeature();
+  const bookFeature = createBookFeature({ getAll: async () => [] });
 
   app.use("/api/books", bookFeature.getRouter());
 
