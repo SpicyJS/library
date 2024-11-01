@@ -1,0 +1,93 @@
+[
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "publishedYear": 1960,
+      "isbn": "9780061120084",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "publishedYear": 1949,
+      "isbn": "9780451524935",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "publishedYear": 1813,
+      "isbn": "9780141040349",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Fiction",
+      "publishedYear": 1925,
+      "isbn": "9780743273565",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "publishedYear": 1851,
+      "isbn": "9781503280786",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "publishedYear": 1951,
+      "isbn": "9780316769488",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "publishedYear": 1937,
+      "isbn": "9780547928227",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "genre": "Dystopian",
+      "publishedYear": 1953,
+      "isbn": "9781451673319",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "Jane Eyre",
+      "author": "Charlotte Bronte",
+      "genre": "Fiction",
+      "publishedYear": 1847,
+      "isbn": "9780141441146",
+      "availability": "available",
+      "rentalInfo": null
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "publishedYear": 1954,
+      "isbn": "9780544003415",
+      "availability": "available",
+      "rentalInfo": null
+    }
+  ]
+  
