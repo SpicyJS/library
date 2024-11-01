@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tsx --test",
-    "dev": "tsx --watch src/app/index.ts"
+    "dev": "tsx --watch src/index.ts"
   },
   "keywords": [],
   "author": "",

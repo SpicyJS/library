@@ -5,7 +5,9 @@ export function createBookFeature() {
     getRouter() {
       const router = Router();
       router.get("/", async (req, res) => {
-        res.json([]);
+        res.json([
+          { author: "Достоевский", title: "Преступления и наказание" },
+        ]);
       });
 
       return router;
