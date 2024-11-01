@@ -26,7 +26,7 @@ export function createBookFeature(db: Db) {
         const id = v4();
         const book = { id, title, author, year };
         db.add(book);
-        res.status(201);
+        res.status(201).end();
       });
 
       return router;
