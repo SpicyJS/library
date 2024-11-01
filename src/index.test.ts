@@ -54,3 +54,20 @@ test("Testing zod", async () => {
   const result = await request(app).post("/api/books").send(book);
   deepEqual(result.status, 400);
 });
+
+test("GET /api/books/:isbn", async () => {
+  const book = {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    genre: "Fiction",
+    publishedYear: 1925,
+    isbn: "9780743273565",
+    availability: "available",
+    rentalInfo: null
+  };
+
+  const result = await request(app).get("/api/books/9780743273565");
+  deepEqual(result.status, 200);
+  const getBook = result.body;
+  deepEqual(getBook, book);
+});
