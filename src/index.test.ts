@@ -25,9 +25,9 @@ test("GET /api/books", async () => {
 
 test("POST /api/books", async () => {
   const book = {
-    author: "Достоевский",
-    title: "Преступления и наказание",
-    year: 1861,
+    author: "J. K. Rowling",
+    title: "Harry Potter and the Philosopher's Stone",
+    year: 2014,
   };
 
   const result = await request(app).post("/api/books").send(book);
