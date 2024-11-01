@@ -1,9 +1,13 @@
 import express from "express";
-import { createBookFeature } from "../features";
+import { Book, createBookFeature } from "../features";
 
 function createDb() {
+  const books: Book[] = [];
   return {
-    getAll: async () => [],
+    getAll: async () => books,
+    add: async (book: Book) => {
+      books.push(book);
+    },
   };
 }
 
