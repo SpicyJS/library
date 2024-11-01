@@ -2,10 +2,13 @@ import { Router } from "express";
 import { v4 } from "uuid";
 
 export type Book = {
-  id: string;
   title: string;
   author: string;
-  year: number;
+  genre: string;
+  publishedYear: number;
+  isbn: string;
+  availability: string;
+  rentalInfo: null;
 };
 
 type Db = {
@@ -22,9 +25,7 @@ export function createBookFeature(db: Db) {
       });
 
       router.post("/", async (req, res) => {
-        const { title, author, year } = req.body;
-        const id = v4();
-        const book = { id, title, author, year };
+        const book = req.body;
         db.add(book);
         res.status(201).end();
       });
@@ -33,5 +34,3 @@ export function createBookFeature(db: Db) {
     },
   };
 }
-
-const books = [{ author: "Достоевский", title: "Преступления и наказание" }];

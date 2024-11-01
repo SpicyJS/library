@@ -25,27 +25,18 @@ test("GET /api/books", async () => {
 
 test("POST /api/books", async () => {
   const book = {
-    author: "J. K. Rowling",
     title: "Harry Potter and the Philosopher's Stone",
-    year: 2014,
+    author: "J.K. Rowling",
+    genre: "Fantasy",
+    publishedYear: 1997,
+    isbn: "9780747532699",
+    availability: "available",
+    rentalInfo: null,
   };
 
   const result = await request(app).post("/api/books").send(book);
-
-  console.log(result.body);
-
   deepEqual(result.status, 201);
-
   const getResult = await request(app).get("/api/books");
-  console.log(getResult);
-
-  const books = getResult.body.map((book) => {
-    return {
-      author: book.author,
-      title: book.title,
-      year: book.year,
-    };
-  });
-
+  const books = getResult.body;
   deepEqual(books, [book]);
 });
