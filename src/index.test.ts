@@ -2,6 +2,7 @@ import { deepEqual } from "node:assert/strict";
 import test, { beforeEach } from "node:test";
 import request from "supertest";
 import { createApp } from "./app";
+import { Book } from "./features";
 
 let app;
 beforeEach(() => {
@@ -28,14 +29,23 @@ test("POST /api/books", async () => {
     title: "Преступления и наказание",
     year: 1861,
   };
+
   const result = await request(app).post("/api/books").send(book);
 
   console.log(result.body);
 
   deepEqual(result.status, 201);
-  // const book = 
-  // deepEqual(result.body, { id: -1 });
 
-  const books = ((await request(app).get("/api/books")).body)
-  deepEqual(books, [])
+  const getResult = await request(app).get("/api/books");
+  console.log(getResult);
+
+  const books = getResult.body.map((book) => {
+    return {
+      author: book.author,
+      title: book.title,
+      year: book.year,
+    };
+  });
+
+  deepEqual(books, [book]);
 });
