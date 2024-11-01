@@ -9,7 +9,6 @@ beforeEach(() => {
 });
 
 test("Supertest works!", async () => {
-  
   const result = await request(app).get("/status");
 
   deepEqual(result.status, 200);
@@ -17,7 +16,6 @@ test("Supertest works!", async () => {
 });
 
 test("GET /api/books", async () => {
-  ;
   const result = await request(app).get("/api/books");
 
   deepEqual(result.status, 200);

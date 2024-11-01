@@ -8,7 +8,8 @@ export function createApp() {
     res.json({ status: "ready" });
   });
 
-  const bookFeature = createBookFeature({ getAll: async () => [] });
+  const db = { getAll: async () => [] };
+  const bookFeature = createBookFeature(db);
 
   app.use("/api/books", bookFeature.getRouter());
 

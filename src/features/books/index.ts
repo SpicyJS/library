@@ -1,6 +1,9 @@
 import { Router } from "express";
 
-type Db = any;
+type Pancake = unknown;
+type Db = {
+  getAll: () => Promise<Pancake[]>;
+};
 
 export function createBookFeature(db: Db) {
   return {
