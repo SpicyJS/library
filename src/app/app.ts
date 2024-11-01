@@ -1,5 +1,6 @@
 import express from "express";
-import { Book, createBookFeature } from "../features";
+import { createBookFeature } from "../features";
+import { Book } from "../features/books/types";
 
 function createDb() {
   const books: Book[] = [];

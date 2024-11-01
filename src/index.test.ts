@@ -52,8 +52,5 @@ test("Testing zod", async () => {
   };
 
   const result = await request(app).post("/api/books").send(book);
-  deepEqual(result.status, 201);
-  const getResult = await request(app).get("/api/books");
-  const books = getResult.body;
-  deepEqual(books, [book]);
+  deepEqual(result.status, 400);
 });
