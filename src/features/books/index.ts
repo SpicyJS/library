@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { v4 } from "uuid";
 
-type Book = {
+export type Book = {
   id: string;
   title: string;
   author: string;
